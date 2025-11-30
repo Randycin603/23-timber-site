@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services | 23 Timber Co.</title>
+  <meta name="description" content="Habitat design, timber stand improvement, and long-term land stewardship planning for New England landowners." />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">23</div>
+        <div class="brand-text">
+          <span class="brand-name">23 Timber Co.</span>
+          <span class="brand-tagline">Habitat • Timber • Legacy</span>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <header class="section-header">
+          <h1>Services</h1>
+          <p>Every property is different, but these are the buckets most projects fall into.</p>
+        </header>
+
+        <div class="grid three">
+          <article class="card">
+            <h2>Habitat & Hunt Layouts</h2>
+            <p>
+              Stand locations, bedding areas, food, and travel routes laid out with wind,
+              access, and pressure in mind.
+            </p>
+            <ul class="checklist">
+              <li>Property walk-through and mapping</li>
+              <li>Entry/exit route planning</li>
+              <li>Recommended bedding and food plot locations</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h2>Timber Stand Improvement</h2>
+            <p>
+              Thinning and crop-tree release to improve health, growth, and long-term value
+              of your best trees.
+            </p>
+            <ul class="checklist">
+              <li>Marking and prescription recommendations</li>
+              <li>Coordination with loggers where needed</li>
+              <li>Follow-up monitoring and adjustments</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h2>Stewardship & Long-Term Plans</h2>
+            <p>
+              Multi-year plans that balance hunting, income, and conservation so your land
+              improves over time.
+            </p>
+            <ul class="checklist">
+              <li>3–10 year written plan</li>
+              <li>Priority projects by phase</li>
+              <li>Estimated timelines and budgets</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta">
+      <div class="container cta-inner">
+        <div>
+          <h2>Not sure where your land fits?</h2>
+          <p>Start with a walk-through and we’ll figure it out together.</p>
+        </div>
+        <a href="contact.html" class="btn primary">Schedule a site visit</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> 23 Timber Co. All rights reserved.</p>
+      <p class="footer-meta">Serving New Hampshire, Maine, and northern New England.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
