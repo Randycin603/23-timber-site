@@ -352,7 +352,7 @@ main {
 }
 
 .card {
-  background: radial-gradient(circle at top left, #020617, #02081a);
+  background: radial-gradient(circle at top left, #141414, #080808);
   border-radius: var(--radius-lg);
   padding: 1.6rem 1.8rem;
   border: 1px solid var(--border-soft);
