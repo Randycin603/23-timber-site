@@ -263,6 +263,7 @@ main {
   overflow: hidden;
 }
 
+/* Video at the bottom of the stack, but still visible */
 .hero-video {
   position: absolute;
   top: 50%;
@@ -271,21 +272,25 @@ main {
   height: 100vh;
   object-fit: cover;
   transform: translate(-50%, -50%);
-  z-index: -2;
+  z-index: 0; /* was -2 */
 }
 
+/* Overlay above video */
 .video-hero .overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(15, 23, 42, 0.15),
-    rgba(15, 23, 42, 0.6)
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.7)
   );
-  z-index: -1;
+  z-index: 1; /* was -1 */
 }
 
+/* Text above overlay */
 .hero-inner {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: flex-start;
