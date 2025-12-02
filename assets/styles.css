@@ -245,33 +245,21 @@ main {
 }
 
 /* -------------------------
-   Hero (Video Background)
+   Hero — Full Page Video Background
 -------------------------- */
 
-.hero {
-  margin-top: 3.5rem; /* space for fixed header */
+/* Video sits behind EVERYTHING */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: -3;
 }
 
-.video-hero {
-  position: relative;
-  height: 80vh;
-  min-height: 520px;
-  display: flex;
-  align-items: flex-end;      /* push content toward bottom */
-  justify-content: flex-start;
-  color: #f9fafb;
-  overflow: hidden;
-}
-
-/* Let the video show through, ignore global black */
-.video-hero,
-.video-hero .hero-inner {
-  background: transparent !important;
-}
-
-/* Full-bleed video */
+/* Video */
 .hero-video {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   min-width: 100%;
@@ -280,86 +268,42 @@ main {
   height: auto;
   object-fit: cover;
   transform: translate(-50%, -50%);
-  z-index: 0;
+  z-index: -2;
 }
 
-/* Darken video just enough for text */
-.video-hero .overlay {
-  position: absolute;
+/* Soft dark overlay over video */
+.video-overlay {
+  position: fixed;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.35),
-    rgba(0, 0, 0, 0.9)
-  );
-  z-index: 1;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: -1;
 }
 
-/* Hero content wrapper */
-.hero-inner {
+/* Hero wrapper (content positioning) */
+.video-hero {
   position: relative;
-  z-index: 2;
-  width: 100%;
-  padding: 0 4vw 3.2rem;      /* left/right + bottom spacing */
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
-/* The actual text panel */
+/* The text card — now translucent, not dark solid */
 .hero-copy {
-  display: inline-block;
   max-width: 32rem;
-  background: rgba(0, 0, 0, 0.78);
-  padding: 1.5rem 2.1rem;
-  border-radius: 1.1rem;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.45); /* translucent */
+  backdrop-filter: blur(6px);
+  padding: 1.8rem 2.2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
 }
 
 .hero-copy h1 {
-  font-size: clamp(2.4rem, 3vw + 1.5rem, 3.4rem);
   margin: 0 0 1rem;
-  line-height: 1.05;
 }
 
 .hero-copy p {
-  margin: 0 0 1.75rem;
-  color: #e0ded6;
-  font-size: 0.98rem;
+  margin-bottom: 1.6rem;
+  color: #e6e6e6;
 }
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.9rem;
-}
-
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .video-hero {
-    height: 70vh;
-    min-height: 440px;
-  }
-
-  .hero-inner {
-    padding: 0 1.5rem 2.5rem;
-    justify-content: center;
-  }
-
-  .hero-copy {
-    max-width: 100%;
-  }
-
-  .hero-copy h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
 /* -------------------------
    Buttons
 -------------------------- */
