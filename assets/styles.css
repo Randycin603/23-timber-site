@@ -245,64 +245,105 @@ main {
 }
 
 /* -------------------------
-   Hero — Full Page Video Background
+   Hero (Video Background)
 -------------------------- */
 
-/* Video sits behind EVERYTHING */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: black;
-  z-index: -3;
+.hero {
+  margin-top: 3.5rem; /* clears the fixed header */
 }
 
-/* Video */
+.video-hero {
+  position: relative;
+  min-height: 85vh;          /* big, almost full screen */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #f9fafb;
+  overflow: hidden;
+}
+
+/* Full-bleed video inside the hero */
 .hero-video {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  transform: translate(-50%, -50%);
   z-index: -2;
 }
 
-/* Soft dark overlay over video */
-.video-overlay {
-  position: fixed;
+/* Dark overlay on top of video */
+.video-hero .overlay {
+  position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.8)
+  );
   z-index: -1;
 }
 
-/* Hero wrapper (content positioning) */
-.video-hero {
+/* Layout for content in hero */
+.hero-inner {
   position: relative;
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-/* The text card — now translucent, not dark solid */
+/* Translucent “glass” card */
 .hero-copy {
   max-width: 32rem;
-  background: rgba(0, 0, 0, 0.45); /* translucent */
+  background: rgba(0, 0, 0, 0.55); /* see-through, not solid */
   backdrop-filter: blur(6px);
   padding: 1.8rem 2.2rem;
-  border-radius: 1rem;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  border-radius: 1.1rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.85);
 }
 
 .hero-copy h1 {
+  font-size: clamp(2.4rem, 3vw + 1.5rem, 3.4rem);
   margin: 0 0 1rem;
+  line-height: 1.05;
 }
 
 .hero-copy p {
-  margin-bottom: 1.6rem;
+  margin: 0 0 1.6rem;
   color: #e6e6e6;
+  font-size: 0.98rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .video-hero {
+    min-height: 70vh;
+  }
+
+  .hero-inner {
+    justify-content: center;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+    padding: 1.4rem 1.7rem;
+  }
+
+  .hero-copy h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 /* -------------------------
    Buttons
