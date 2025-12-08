@@ -360,6 +360,34 @@ main {
   margin-top: 0;        /* keeps it tight to the top-left */
 }
 
+/* =========================================================
+   HERO — MANUAL POSITION OVERRIDES (top-left placement)
+   ========================================================= */
+
+.video-hero {
+  padding-top: 2.5rem !important;   /* move MUCH higher */
+  padding-left: 1.5rem !important;  /* slight left shift */
+  min-height: 92vh !important;      /* ensures it fills screen */
+}
+
+.hero-inner {
+  justify-content: flex-start !important;
+  align-items: flex-start !important;  /* move upward */
+  margin-top: 0 !important;
+}
+
+.hero-copy {
+  max-width: 360px !important;       /* smaller box */
+  background: rgba(0,0,0,0.10) !important; /* more transparent */
+  padding: 1.25rem 1.5rem !important;
+  border-radius: 10px !important;
+  backdrop-filter: blur(1.5px) !important;
+
+  /* FORCE position toward the top-left */
+  margin-top: 1rem !important;
+  margin-left: 0 !important;
+}
+
 /* Mobile tweaks */
 @media (max-width: 768px) {
   .video-hero {
