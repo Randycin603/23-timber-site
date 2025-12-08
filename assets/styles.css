@@ -254,6 +254,14 @@ main {
 }
 
 .video-hero {
+  display: flex;
+  align-items: flex-start; /* moves content upward */
+  justify-content: flex-start; /* moves content left */
+  padding-top: 5rem; /* spacing below header */
+  padding-left: 2rem;
+}
+
+.video-hero {
   position: relative;
   min-height: 90vh;           /* almost full screen */
   display: flex;
@@ -285,35 +293,32 @@ main {
   z-index: 1;   /* was -1 */
 }
 
-/* Content layout */
+/* --- HERO COPY BOX FIXES --- */
+
 .hero-inner {
   position: relative;
-  z-index: 2;   /* was 0 */
-  display: flex;
-  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 6rem;  /* pushes box below the header */
   justify-content: flex-start;
 }
 
-/* NO background block – just text with a light shadow */
 .hero-copy {
-  max-width: 32rem;
-  padding: 0;
-  background: transparent;
-  box-shadow: none;
+  background: rgba(0, 0, 0, 0.75);   /* translucent black */
+  padding: 2rem 2.5rem;
+  border-radius: 12px;               /* softer look */
+  max-width: 480px;                  /* tight, clean box */
+  backdrop-filter: blur(4px);        /* classy frosted effect */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
 }
 
 .hero-copy h1 {
-  font-size: clamp(2.4rem, 3vw + 1.5rem, 3.4rem);
-  margin: 0 0 1rem;
-  line-height: 1.05;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  margin-top: 0;
 }
 
 .hero-copy p {
-  margin: 0 0 1.6rem;
-  color: #f3f4f6;
-  font-size: 0.98rem;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1.5rem;
 }
 
 .hero-actions {
