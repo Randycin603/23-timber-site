@@ -40,13 +40,30 @@
   --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.55);
   --shadow-subtle: 0 8px 24px rgba(0, 0, 0, 0.45);
 }
-/* === HARD RESET ALL BACKGROUNDS TO PURE BLACK === */
+.video-hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 6rem;   /* moves box below header */
+  padding-left: 2rem;
+  overflow: hidden;
+}
 
-html, body, main, section, footer, header,
-.container, .section, .section.muted, .section.cta,
-.card, .about-highlight, .site-footer,
-.split {
-  background: #000 !important;
+.hero-inner {
+  width: auto;
+  max-width: none;
+  padding: 0;
+}
+
+.hero-copy {
+  background: rgba(0, 0, 0, 0.55);   /* translucent */
+  padding: 1.75rem 2rem;
+  border-radius: 12px;
+  max-width: 420px;                  /* perfect reading width */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  backdrop-filter: blur(3px);
 }
 
 .site-header {
