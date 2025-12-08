@@ -322,11 +322,12 @@ main {
 }
 
 .hero-copy {
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.35);  /* more see-through */
   padding: 1.75rem 2rem;
   border-radius: 12px;
   max-width: 420px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  backdrop-filter: blur(2px);
 }
 
 .hero-copy h1 {
@@ -341,6 +342,22 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 0.9rem;
+}
+
+/* === POSITION TWEAKS — overrides above === */
+
+.video-hero {
+  padding-top: 5rem;    /* clears header — adjust as needed */
+  padding-left: 2rem;   /* moves text left */
+}
+
+.hero-inner {
+  margin-top: 0;        /* removes downward push */
+  justify-content: flex-start;
+}
+
+.hero-copy {
+  margin-top: 0;        /* keeps it tight to the top-left */
 }
 
 /* Mobile tweaks */
