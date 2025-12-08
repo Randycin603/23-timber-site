@@ -270,34 +270,28 @@ main {
   margin-top: 3.5rem; /* space for fixed header */
 }
 
-.video-hero {
-  display: flex;
-  align-items: flex-start; /* moves content upward */
-  justify-content: flex-start; /* moves content left */
-  padding-top: 5rem; /* spacing below header */
-  padding-left: 2rem;
-}
-
+/* Hero wrapper with video */
 .video-hero {
   position: relative;
-  min-height: 90vh;           /* almost full screen */
+  min-height: 92vh;           /* basically full screen */
   display: flex;
-  align-items: center;
+  align-items: flex-start;    /* content toward top */
   justify-content: flex-start;
   color: #f9fafb;
   overflow: hidden;
 }
 
+/* Video fills the hero */
 .hero-video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0;   /* was -2 */
+  z-index: -2;
 }
 
-/* Darken video a bit so text is readable */
+/* Dark overlay on the video so text is readable */
 .video-hero::before {
   content: "";
   position: absolute;
@@ -307,35 +301,37 @@ main {
     rgba(0, 0, 0, 0.25),
     rgba(0, 0, 0, 0.75)
   );
-  z-index: 1;   /* was -1 */
+  z-index: -1;
 }
 
-/* --- HERO COPY BOX FIXES --- */
-
+/* Layout for the text container inside the hero */
+/* Note: hero-inner ALSO has .container, so we override container defaults here */
 .hero-inner {
   position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 6rem;  /* pushes box below the header */
+  display: flex;
   justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 100%;      /* override .container’s 1120px */
+  margin: 0;            /* override .container’s margin: 0 auto */
+  padding: 4.5rem 0 0 3rem;  /* top, right, bottom, left */
 }
 
+/* Text panel */
 .hero-copy {
-  background: rgba(0, 0, 0, 0.35);  /* more see-through */
-  padding: 1.75rem 2rem;
-  border-radius: 12px;
-  max-width: 420px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  max-width: 24rem;                    /* smaller box */
+  background: rgba(0, 0, 0, 0.10);     /* light translucent */
+  padding: 1.4rem 1.6rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(2px);
 }
 
 .hero-copy h1 {
-  margin-top: 0;
+  margin: 0 0 0.75rem;
 }
 
 .hero-copy p {
-  margin-bottom: 1.5rem;
+  margin: 0 0 1.5rem;
 }
 
 .hero-actions {
@@ -344,57 +340,17 @@ main {
   gap: 0.9rem;
 }
 
-/* === POSITION TWEAKS — overrides above === */
+/* -------------------------
+   Hero – Responsive
+-------------------------- */
 
-.video-hero {
-  padding-top: 5rem;    /* clears header — adjust as needed */
-  padding-left: 2rem;   /* moves text left */
-}
-
-.hero-inner {
-  margin-top: 0;        /* removes downward push */
-  justify-content: flex-start;
-}
-
-.hero-copy {
-  margin-top: 0;        /* keeps it tight to the top-left */
-}
-
-/* =========================================================
-   HERO — MANUAL POSITION OVERRIDES (top-left placement)
-   ========================================================= */
-
-.video-hero {
-  padding-top: 2.5rem !important;   /* move MUCH higher */
-  padding-left: 1.5rem !important;  /* slight left shift */
-  min-height: 92vh !important;      /* ensures it fills screen */
-}
-
-.hero-inner {
-  justify-content: flex-start !important;
-  align-items: flex-start !important;  /* move upward */
-  margin-top: 0 !important;
-}
-
-.hero-copy {
-  max-width: 360px !important;       /* smaller box */
-  background: rgba(0,0,0,0.10) !important; /* more transparent */
-  padding: 1.25rem 1.5rem !important;
-  border-radius: 10px !important;
-  backdrop-filter: blur(1.5px) !important;
-
-  /* FORCE position toward the top-left */
-  margin-top: 1rem !important;
-  margin-left: 0 !important;
-}
-
-/* Mobile tweaks */
 @media (max-width: 768px) {
   .video-hero {
     min-height: 70vh;
   }
 
   .hero-inner {
+    padding: 4.5rem 1.5rem 0 1.5rem; /* less side padding on phones */
     justify-content: center;
   }
 
@@ -411,6 +367,7 @@ main {
     align-items: flex-start;
   }
 }
+
 
 /* -------------------------
    Buttons
