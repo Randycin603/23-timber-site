@@ -1,6 +1,4 @@
-body {
-  background: #6600ff !important;  /* obnoxious purple for testing */
-}
+
 /* -------------------------
    Base + Layout
 -------------------------- */
@@ -47,7 +45,7 @@ body {
 html, body, main, section, footer, header,
 .container, .section, .section.muted, .section.cta,
 .card, .about-highlight, .site-footer,
-.video-hero, .hero, .hero-inner, .split {
+.split {
   background: #000 !important;
 }
 
@@ -265,14 +263,13 @@ main {
   overflow: hidden;
 }
 
-/* Video fills the hero */
 .hero-video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -2;
+  z-index: 0;   /* was -2 */
 }
 
 /* Darken video a bit so text is readable */
@@ -285,13 +282,13 @@ main {
     rgba(0, 0, 0, 0.25),
     rgba(0, 0, 0, 0.75)
   );
-  z-index: -1;
+  z-index: 1;   /* was -1 */
 }
 
 /* Content layout */
 .hero-inner {
   position: relative;
-  z-index: 0;
+  z-index: 2;   /* was 0 */
   display: flex;
   align-items: center;
   justify-content: flex-start;
