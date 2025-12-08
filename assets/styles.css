@@ -249,12 +249,12 @@ main {
 -------------------------- */
 
 .hero {
-  margin-top: 3.5rem; /* clears the fixed header */
+  margin-top: 3.5rem; /* space for fixed header */
 }
 
 .video-hero {
   position: relative;
-  min-height: 85vh;          /* big, almost full screen */
+  min-height: 90vh;           /* almost full screen */
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -262,7 +262,7 @@ main {
   overflow: hidden;
 }
 
-/* Full-bleed video inside the hero */
+/* Video fills the hero */
 .hero-video {
   position: absolute;
   inset: 0;
@@ -272,36 +272,48 @@ main {
   z-index: -2;
 }
 
+/* Darken video a bit so text is readable */
+.video-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.75)
+  );
+  z-index: -1;
+}
 
-/* Layout for content in hero */
+/* Content layout */
 .hero-inner {
   position: relative;
-  z-index: 1;
+  z-index: 0;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
-/* Translucent “glass” card */
+/* NO background block – just text with a light shadow */
 .hero-copy {
   max-width: 32rem;
-  background: rgba(0, 0, 0, 0.55); /* see-through, not solid */
-  backdrop-filter: blur(6px);
-  padding: 1.8rem 2.2rem;
-  border-radius: 1.1rem;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.85);
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .hero-copy h1 {
   font-size: clamp(2.4rem, 3vw + 1.5rem, 3.4rem);
   margin: 0 0 1rem;
   line-height: 1.05;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .hero-copy p {
   margin: 0 0 1.6rem;
-  color: #e6e6e6;
+  color: #f3f4f6;
   font-size: 0.98rem;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
 }
 
 .hero-actions {
@@ -310,7 +322,7 @@ main {
   gap: 0.9rem;
 }
 
-/* Responsive tweaks */
+/* Mobile tweaks */
 @media (max-width: 768px) {
   .video-hero {
     min-height: 70vh;
@@ -322,7 +334,6 @@ main {
 
   .hero-copy {
     max-width: 100%;
-    padding: 1.4rem 1.7rem;
   }
 
   .hero-copy h1 {
@@ -334,6 +345,7 @@ main {
     align-items: flex-start;
   }
 }
+
 /* -------------------------
    Buttons
 -------------------------- */
