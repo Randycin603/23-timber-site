@@ -139,6 +139,13 @@ main {
   display: block;
   margin-right: 0.75rem;
 }
+
+.brand-logo {
+  height: 42px;     /* try 42–52px for size */
+  width: auto;
+  display: block;
+}
+
 .brand {
   display: flex;
   align-items: center;
