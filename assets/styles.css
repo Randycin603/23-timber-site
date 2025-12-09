@@ -132,7 +132,13 @@ main {
   justify-content: space-between;
   padding: 0.75rem 0;
 }
-
+/* Logo in header */
+.brand-logo {
+  height: 40px;      /* controls how tall the logo is */
+  width: auto;       /* keeps aspect ratio */
+  display: block;
+  margin-right: 0.75rem;
+}
 .brand {
   display: flex;
   align-items: center;
