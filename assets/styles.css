@@ -116,6 +116,13 @@ main {
    Header & Nav
 -------------------------- */
 
+.brand-logo {
+  height: 42px;      /* adjust size */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
 .site-header {
   position: fixed;
   top: 0;
