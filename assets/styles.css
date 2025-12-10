@@ -490,6 +490,33 @@ main {
   }
 }
 
+.team-card {
+  margin-bottom: 3rem;
+}
+
+.team-name {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.team-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.team-photo {
+  width: 220px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.team-content {
+  flex: 1;
+  min-width: 280px;
+}
+
 /* -------------------------
    Lists
 -------------------------- */
