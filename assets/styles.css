@@ -265,6 +265,22 @@ main {
   margin-top: 3.5rem; /* space for fixed header */
 }
 
+/* HERO LOGO WATERMARK */
+.hero-logo-mark {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 5;               /* higher than the overlay */
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.hero-logo-mark img {
+  height: 90px;
+  width: auto;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+}
+
 /* Hero wrapper with video */
 .video-hero {
   position: relative;
