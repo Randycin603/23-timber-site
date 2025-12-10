@@ -450,6 +450,22 @@ main {
   border: 1px solid var(--border-soft);
   box-shadow: var(--shadow-subtle);
 }
+/* === ABOUT PAGE PORTRAIT IMAGES === */
+.team-photo {
+  width: 220px;           /* perfect professional size */
+  height: auto;
+  border-radius: 12px;    /* slight round edges */
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  margin-bottom: 1rem;
+}
+
+/* Ensure photos don’t blow up on tiny screens */
+@media (max-width: 600px) {
+  .team-photo {
+    width: 160px;
+  }
+}
 
 /* -------------------------
    Lists
