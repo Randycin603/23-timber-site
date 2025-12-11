@@ -746,3 +746,99 @@ main {
     padding: 3.5rem 0;
   }
 }
+
+/* -------------------------
+   Notes / Field Notes Styling
+-------------------------- */
+
+/* Narrow reading width */
+.container.narrow {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Note top section */
+.note-hero {
+  padding-top: 6rem;           /* clears fixed header */
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-soft);
+  background: radial-gradient(circle at top, #111111 0, #050505 60%);
+}
+
+.note-hero h1 {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 0.35rem;
+}
+
+.note-hero h2 {
+  font-size: 1.9rem;
+  margin: 0 0 0.5rem;
+}
+
+.note-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Body wrapper */
+.note-body {
+  padding: 2.5rem 0 4rem;
+}
+
+/* Main note card */
+.note-article {
+  background: radial-gradient(circle at top left, #141414, #050505);
+  border-radius: 14px;
+  padding: 2rem 2.25rem;
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-subtle);
+}
+
+.note-article p {
+  line-height: 1.7;
+  margin: 0 0 1.1rem;
+}
+
+/* Headings inside notes */
+.note-article h2 {
+  margin: 2rem 0 0.75rem;
+  font-size: 1.25rem;
+}
+
+.note-article ul {
+  margin: 0 0 1.2rem 1.2rem;
+  padding: 0;
+}
+
+.note-article li {
+  margin-bottom: 0.35rem;
+}
+
+/* Blockquotes: pull-out thoughts */
+.note-article blockquote {
+  margin: 1.4rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent);
+  color: var(--text-main);
+  font-style: italic;
+}
+
+/* Back button spacing */
+.note-article .btn {
+  margin-top: 1.5rem;
+}
+
+/* Mobile tweaks for notes */
+@media (max-width: 768px) {
+  .note-hero {
+    padding-top: 5.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .note-article {
+    padding: 1.6rem 1.4rem;
+  }
+}
