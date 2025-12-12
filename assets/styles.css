@@ -843,3 +843,21 @@ main {
     padding: 1.6rem 1.4rem;
   }
 }
+/* ========= DEBUG: force hamburger visible on mobile ========= */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex !important;
+    position: relative;
+    z-index: 9999;
+  }
+
+  .main-nav {
+    display: flex !important;
+    align-items: center;
+  }
+
+  .header-inner {
+    position: relative;
+    z-index: 9999;
+  }
+}
