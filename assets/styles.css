@@ -1,4 +1,4 @@
-body { outline: 8px solid red !important; }
+
 /* -------------------------
    Base + Layout
 -------------------------- */
@@ -45,7 +45,9 @@ body { outline: 8px solid red !important; }
   background: #000 !important;
   border-bottom: 1px solid #222 !important;
 }
-
+.site-header {
+  z-index: 9999 !important;
+}
 .card, .about-highlight {
   border: 1px solid #222 !important;
   background: #000 !important;
