@@ -20,17 +20,17 @@
     </a>
 
     <nav class="main-nav">
-      <button class="nav-toggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
         <span></span><span></span><span></span>
       </button>
 
-      <ul class="nav-links">
+      <ul class="nav-links" id="primary-nav">
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="municipal.html">Municipal</a></li>
         <li><a href="landowners.html">Land Owners</a></li>
         <li><a href="contractors.html">Contractors</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html" class="active">About</a></li>
         <li><a href="notes.html">Notes from the Underground</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -152,14 +152,14 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      navToggle.classList.toggle('open');
-    });
-  </script>
-</body>
-</html>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', navLinks.classList.contains('open'));
+  });
+</script>
