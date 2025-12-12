@@ -678,8 +678,8 @@ main {
   }
 
   .nav-links {
-    position: absolute;
-    top: 100%;
+    position: fixed;                 /* <-- key change */
+    top: 64px;                       /* adjust to your header height */
     left: 0;
     right: 0;
     flex-direction: column;
@@ -695,11 +695,13 @@ main {
     transition: max-height 0.25s ease, opacity 0.25s ease;
   }
 
-  .nav-links.open {
-    max-height: 420px;      /* was 240px – now tall enough for all items */
-    opacity: 1;
-    pointer-events: auto;
-  }
+.nav-links.open {
+  max-height: calc(100vh - 64px);  /* fills the remaining screen */
+  overflow-y: auto;                /* scrolls if items exceed height */
+  -webkit-overflow-scrolling: touch;
+  opacity: 1;
+  pointer-events: auto;
+}
 
   .nav-links a {
     display: block;
