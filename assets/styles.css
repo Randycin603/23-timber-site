@@ -693,15 +693,17 @@ main {
     opacity: 0;
     pointer-events: none;
     transition: max-height 0.25s ease, opacity 0.25s ease;
+      z-index: 9999;  /* ADD THIS */
   }
 
 .nav-links.open {
-  max-height: calc(100vh - 64px);  /* fills the remaining screen */
-  overflow-y: auto;                /* scrolls if items exceed height */
+  max-height: calc(100vh - 64px);   /* instead of 420px */
+  overflow-y: auto;                 /* let it scroll */
   -webkit-overflow-scrolling: touch;
   opacity: 1;
   pointer-events: auto;
 }
+  }
 
   .nav-links a {
     display: block;
