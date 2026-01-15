@@ -987,3 +987,17 @@ main {
   .note-title { font-size: 1.6rem; }
   .note-article { padding: 1.6rem 1.4rem; }
 }
+
+.note-hero-brand{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  margin: 0 0 0.9rem 0;
+  opacity: 0.95;
+}
+
+.note-hero-logo{
+  height: 56px;
+  width: auto;
+  display:block;
+}
