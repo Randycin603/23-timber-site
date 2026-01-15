@@ -258,6 +258,12 @@ main {
   background-color: #e5e7eb;
   border-radius: 999px;
 }
+.nav-links a {
+  display: flex;
+  align-items: center;
+  height: 40px;          /* 👈 forces identical vertical box */
+  line-height: 1;        /* 👈 removes font metric drift */
+}
 
 /* -------------------------
    Hero (Video Background)
