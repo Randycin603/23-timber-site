@@ -1015,3 +1015,37 @@ main {
 .note-body {
   padding: 2.5rem 0 4rem;
 }
+/* Note pages: single-card layout */
+.note-wrap {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.note-hero .container.narrow {
+  max-width: 980px;
+}
+
+.note-hero-brand {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.9rem;
+  opacity: 0.95;
+}
+
+.note-hero-logo {
+  height: 52px;
+  width: auto;
+  display: block;
+}
+
+/* Ensure the note body is ONE card */
+.note-card.note-single {
+  padding: 2.25rem 2.4rem;
+}
+
+.note-card.note-single hr {
+  border: none;
+  height: 1px;
+  background: rgba(255,255,255,0.10);
+  margin: 2rem 0;
+}
