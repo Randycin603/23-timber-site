@@ -986,3 +986,32 @@ main {
     padding: 1.4rem 1.3rem;
   }
 }
+/* Wider reading wrap (less narrow overall) */
+.note-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Hero can be wider than the article if you want */
+.note-hero .container.narrow {
+  max-width: 960px;
+}
+
+/* One-card article spacing */
+.note-single hr {
+  border: none;
+  height: 1px;
+  background: rgba(255,255,255,0.10);
+  margin: 2rem 0;
+}
+
+.note-single h2 {
+  margin-top: 0;
+}
+
+.note-single p:last-of-type {
+  margin-bottom: 0;
+}
+.note-body {
+  padding: 2.5rem 0 4rem;
+}
