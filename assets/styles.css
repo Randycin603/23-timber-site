@@ -1007,3 +1007,29 @@ main {
   width: auto;
   display:block;
 }
+
+.note-hero-grid{
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:2.25rem;
+  align-items:center;
+}
+
+.note-hero-badge{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+}
+
+.note-hero-badge-img{
+  width:92px;
+  height:auto;
+  display:block;
+  opacity:.95;
+  filter: drop-shadow(0 10px 26px rgba(0,0,0,.65));
+}
+
+@media (max-width:768px){
+  .note-hero-grid{ grid-template-columns:1fr; gap:1rem; }
+  .note-hero-badge-img{ width:72px; }
+}
