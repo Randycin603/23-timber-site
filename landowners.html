@@ -4,111 +4,181 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Land Owners | 23 Timber Co.</title>
-  <meta name="description" content="Habitat, timber, and long-term land planning for private landowners in New England." />
+  <meta name="description" content="Habitat, timber, access, and long-term land planning for private landowners in New England." />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
+
 <body>
- <header class="site-header">
-  <div class="container header-inner">
+  <header class="site-header">
+    <div class="container header-inner">
 
-    <a href="index.html" class="brand">
-      <img src="assets/img/logo.png" alt="23 Timber Co. logo" class="brand-logo" />
-      <div class="brand-text">
-        <span class="brand-name">23 Timber Co.</span>
-        <span class="brand-tagline">Habitat • Timber • Legacy</span>
-      </div>
-    </a>
+      <a href="index.html" class="brand">
+        <img src="assets/img/logo.png" alt="23 Timber Co. logo" class="brand-logo" />
+        <div class="brand-text">
+          <span class="brand-name">23 Timber Co.</span>
+          <span class="brand-tagline">Habitat • Timber • Legacy</span>
+        </div>
+      </a>
 
-    <nav class="main-nav">
-      <button class="nav-toggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-<ul class="nav-links">
-  <li><a href="index.html">Home</a></li>
-  <li><a href="services.html">Services</a></li>
-  <li><a href="landowners.html">Land Owners</a></li>
-  <li><a href="contractors.html">Contractors</a></li>
-  <li><a href="about.html">About</a></li>
-  <li><a href="notes.html">Notes from the Underground</a></li>
-  <li><a href="contact.html">Contact</a></li>
-</ul>
+      <nav class="main-nav">
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+          <span></span><span></span><span></span>
+        </button>
 
-  </div>
-</header>
+        <ul class="nav-links" id="primary-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a class="active" href="landowners.html">Land Owners</a></li>
+          <li><a href="contractors.html">Contractors</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="notes.html">Notes from the Underground</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
 
- <main>
-  <section class="section">
-    <div class="container">
-      <header class="section-header">
-        <h1>For Land Owners</h1>
-        <p>
-          Whether you just bought your first 10 acres or your family has held
-          land for generations, we help you turn “a piece of woods” into a
-          working, well-planned property.
-        </p>
-      </header>
+    </div>
+  </header>
 
-      <div class="split">
-        <div>
-          <h2>Dialed-in habitat, not random projects.</h2>
+  <main>
+
+    <!-- HERO -->
+    <section class="section" style="padding-top: 6.5rem;">
+      <div class="container">
+        <header class="section-header">
+          <h1>For Land Owners</h1>
           <p>
-            A single food plot or a quick cut of timber rarely fixes anything by itself.
-            We look at the whole property — access, wind, cover, food, timber, and water —
-            and design work that actually moves the needle.
+            You don’t need “projects.” You need a plan that matches how your woods actually work —
+            access, wind, water, timber value, and the kind of habitat that holds game year after year.
           </p>
-          <ul class="checklist">
-            <li>Hunt-focused layouts that still make sense year-round</li>
-            <li>Clear priorities if money or time is limited</li>
-            <li>Options for doing work yourself vs. hiring it out</li>
-          </ul>
+        </header>
+
+        <div class="split">
+          <div class="card">
+            <h2>Dialed-in habitat, not random projects.</h2>
+            <p>
+              Food plots and quick cuts are tools — not a strategy. We step back and look at the whole property,
+              then build a sequence you can execute without wasting money or years.
+            </p>
+
+            <ul class="checklist">
+              <li>Hunt-focused layouts that still make sense year-round</li>
+              <li>Clear priorities when money, time, or equipment are limited</li>
+              <li>Options for DIY work vs. hiring help (and what actually matters)</li>
+            </ul>
+
+            <div class="hero-actions" style="margin-top: 1.25rem;">
+              <a class="btn primary" href="contact.html">Talk through your property</a>
+              <a class="btn" href="services.html">View services</a>
+            </div>
+          </div>
+
+          <div class="about-highlight">
+            <h3>Typical landowner outcomes</h3>
+            <ul class="checklist">
+              <li>A “start here” plan after a first walk-through</li>
+              <li>Fixing access, pressure, and stand placement on over-hunted ground</li>
+              <li>Turning chaotic timber into future value (without blowing up habitat)</li>
+              <li>Smart screening and edge work that changes movement</li>
+            </ul>
+
+            <p style="margin-top: 1rem; color: var(--text-muted);">
+              Based in New Hampshire. Serving northern New England. Remote planning available.
+            </p>
+
+            <a href="contact.html" class="btn full" style="margin-top: 1rem;">Book a planning call</a>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="about-highlight">
-          <h3>Typical landowner projects</h3>
-          <ul class="checklist">
-            <li>First-time walk-through and “where do I start?” plan</li>
-            <li>Reworking an over-hunted or over-cut property</li>
-            <li>Balancing timber income with habitat improvements</li>
-          </ul>
-          <a href="contact.html" class="btn full">Talk through your property</a>
+    <!-- HOW IT WORKS -->
+    <section class="section muted">
+      <div class="container">
+        <header class="section-header">
+          <h2>How it works</h2>
+          <p>
+            A simple process that prevents wasted effort and gets you to a property you can manage on purpose.
+          </p>
+        </header>
+
+        <div class="grid three">
+          <div class="card">
+            <h3>1) Walk-through + goals</h3>
+            <p>
+              We start with what you want: hunting, timber income, privacy, trails, a future build, a family legacy —
+              then we translate it into priorities.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>2) Map the constraints</h3>
+            <p>
+              Access, terrain, wet areas, prevailing winds, existing trails, pressure, neighbors, and the places your woods
+              are already telling you “no.”
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>3) Build a phased plan</h3>
+            <p>
+              A clear sequence: what to do first, what to delay, and what not to do at all.
+              So improvements compound instead of fighting each other.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
 
+    <!-- WHO THIS IS FOR -->
+    <section class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Who this is for</h2>
+          <p>
+            If any of these feel familiar, you’re in the right place.
+          </p>
+        </header>
 
-<main>
-  <section class="section">
-    <div class="container split">
-      <div>
-        <h1>Contact</h1>
-        <p>
-          Ready to walk your land or just want to kick around ideas? Send a note
-          with a quick description of your property and what you’re hoping to do.
-        </p>
-        <p>
-          The more detail you can share—acreage, town, current use, main goals—the
-          better we can prep before the first conversation.
-        </p>
+        <div class="grid three">
+          <div class="card">
+            <h3>New landowners</h3>
+            <p>
+              You just bought acreage and don’t want to make the classic mistakes that take years to undo.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Inherited land</h3>
+            <p>
+              You want to honor what’s there, improve it, and pass on something better than you received.
+            </p>
+          </div>
+          <div class="card">
+            <h3>“I’ve tried stuff” land</h3>
+            <p>
+              Plots, stands, hinge cuts, random trail work — but nothing’s tying together. Time to unify it.
+            </p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="about-highlight">
-        <h2>Get in touch</h2>
-        <p><strong>Email</strong><br>
-          <a href="mailto:info@23timberco.com">info@23timberco.com</a>
-        </p>
-        <p><strong>Location</strong><br>
-          Based in New Hampshire, working across northern New England.
-        </p>
-        <p><strong>Next step</strong><br>
-          Send an email and we’ll follow up with questions and options for a
-          site visit or remote planning call.
-        </p>
+    <!-- CONTACT / CTA -->
+    <section class="section cta">
+      <div class="container cta-inner">
+        <div>
+          <h2>Ready to get a real plan?</h2>
+          <p>
+            Send acreage + town + current use + your top goals. I’ll reply with a few questions and next steps.
+          </p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn primary" href="mailto:info@23timberco.com?subject=Land%20Planning%20Inquiry">Email me</a>
+          <a class="btn" href="contact.html">Contact page</a>
+        </div>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
+
+  </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -126,6 +196,7 @@
     navToggle.addEventListener('click', () => {
       navLinks.classList.toggle('open');
       navToggle.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', navLinks.classList.contains('open') ? 'true' : 'false');
     });
   </script>
 </body>
