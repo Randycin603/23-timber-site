@@ -1084,3 +1084,6 @@ main {
   font-size: 1rem;
   opacity: .95;
 }
+.card .muted{
+  color: var(--text-muted);
+}
