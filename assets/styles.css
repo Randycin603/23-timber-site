@@ -95,6 +95,10 @@ main {
   background: radial-gradient(circle at top, #141414 0, #0b0b0b 55%);
 }
 
+main {
+  padding-top: 2.5rem;
+}
+
 .section {
   padding: 4.5rem 0;
 }
