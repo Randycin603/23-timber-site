@@ -1136,41 +1136,63 @@ main {
 .card .muted{
   color: var(--text-muted);
 }
-/* About page top split tweaks */
+/* ABOUT: keep the top split balanced */
 .about-top{
   align-items: start;
   gap: 2rem;
 }
 
-/* Team cards */
+/* ABOUT: team grid spacing */
+.about-team-grid{
+  margin-top: 1.5rem;
+}
+
+/* ABOUT: team cards (image cannot explode layout) */
 .team-card{
   padding: 1.25rem;
 }
 
 .team-inner{
   display: grid;
-  grid-template-columns: 160px 1fr;
+  grid-template-columns: 160px minmax(0, 1fr);
   gap: 1.25rem;
   align-items: start;
 }
 
+/* The key: a fixed photo frame */
+.team-photo{
+  width: 160px;
+  height: 160px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+}
+
+/* Force the image to live inside the frame */
 .team-photo img{
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 100%;
   object-fit: cover;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.10);
+  display: block;
+}
+
+/* Don’t let long text / lists stretch weird */
+.team-content{
+  min-width: 0;
 }
 
 .team-content h3{
   margin-top: 0;
 }
 
+/* Mobile: stack image above text */
 @media (max-width: 900px){
   .team-inner{
     grid-template-columns: 1fr;
   }
-  .team-photo img{
-    aspect-ratio: 16 / 10;
+  .team-photo{
+    width: 100%;
+    height: 220px; /* looks good on mobile */
   }
 }
