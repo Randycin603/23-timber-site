@@ -1196,3 +1196,10 @@ main {
     height: 220px; /* looks good on mobile */
   }
 }
+.team-card .about-highlight.soft{
+  padding: 1rem 1.1rem;
+  border-radius: 14px;
+}
+.team-card .about-highlight.soft h4{
+  margin-bottom: .5rem;
+}
