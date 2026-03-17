@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>23 Timber Co. | Habitat • Timber • Legacy</title>
-  <meta name="description" content="23 Timber Co. helps New England landowners turn raw acres into healthy forests, better habitat, and long-term timber value." />
+  <meta name="description" content="23 Timber Co. helps New England landowners build better habitat, healthier timber, and long-term land plans worth handing down." />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 
 <body>
+
 <header class="site-header">
   <div class="container header-inner">
 
-    <!-- BRAND / LOGO -->
     <a href="index.html" class="brand">
       <img src="assets/img/logo.png" alt="23 Timber Co. logo" class="brand-logo" />
       <div class="brand-text">
@@ -21,14 +21,13 @@
       </div>
     </a>
 
-    <!-- NAVIGATION -->
     <nav class="main-nav">
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
 
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+      <ul class="nav-links" id="primary-nav">
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="landowners.html">Land Owners</a></li>
         <li><a href="contractors.html">Contractors</a></li>
@@ -41,120 +40,167 @@
   </div>
 </header>
 
-  <main>
-<section class="hero video-hero">
-  
-  <!-- Watermark Logo -->
-  <div class="hero-logo-mark">
-    <img src="assets/img/logo.png" alt="23 Timber Co. logo">
-  </div>
+<main>
 
-  <!-- Background Video -->
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="assets/img/hero.mp4" type="video/mp4" />
-  </video>
+  <!-- Hero -->
+  <section class="hero video-hero">
 
-  <!-- Hero Copy -->
-  <div class="container hero-inner">
-    <div class="hero-copy">
-      <h1>Turn your acres into a living legacy.</h1>
-      <p>
-        Thoughtful land and habitat planning for New England owners who care
-        about wildlife, timber, and the next generation.
-      </p>
-      <div class="hero-actions">
-        <a href="services.html" class="btn ghost">View services</a>
+    <div class="hero-logo-mark">
+      <img src="assets/img/logo.png" alt="23 Timber Co. logo">
+    </div>
+
+    <video autoplay muted loop playsinline class="hero-video" poster="assets/img/hero-poster.jpg">
+      <source src="assets/img/hero.mp4" type="video/mp4" />
+    </video>
+
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h1>Land that works better over time.</h1>
+        <p>
+          Habitat planning, timber management, and long-term stewardship
+          for New England landowners who are thinking past the next season.
+        </p>
+        <div class="hero-actions">
+          <a href="services.html" class="btn ghost">See what we do</a>
+        </div>
       </div>
     </div>
-  </div>
 
-</section>
+  </section>
 
-<!-- Trust Strip (add this) -->
-<section class="trust-strip" aria-label="Quick credentials">
-  <div class="container trust-strip__inner">
-    <div class="trust-pill">Serving Massachusetts • New Hampshire • Maine • Northern New England</div>
-    <div class="trust-pill">Owner-operator led</div>
-    <div class="trust-pill">General Liability (NEXT)</div>
-    <div class="trust-pill">ISA Certified Arborist</div>
-    <div class="trust-pill">FAA Part 107 Drone Pilot Licence</div>
-    <div class="trust-pill">National Deer Association Steward</div>
-  </div>
-</section>
-
-    <!-- Services Snapshot -->
-   <section class="section" id="services">
-  <div class="container">
-    <header class="section-header">
-      <h2>What we do</h2>
-      <p>Practical, boots-on-the-ground work backed by long-term planning.</p>
-    </header>
-
-    <div class="grid three">
-      <article class="card">
-        <h3>Habitat & Hunt Layouts</h3>
+  <!-- Services snapshot -->
+  <section class="section" id="services">
+    <div class="container">
+      <header class="section-header">
+        <h2>What we do</h2>
         <p>
-          Bedding, food, and safe travel routes laid out with wind, access,
-          and real hunting pressure in mind – not just lines on a map.
+          We work with landowners on the decisions that determine what their property looks like
+          in 10, 20, and 30 years — habitat, timber, access, and how all three fit together.
         </p>
-      </article>
+      </header>
 
-      <article class="card">
-        <h3>Timber Stand Improvement</h3>
+      <div class="grid three">
+
+        <article class="card">
+          <h3>Habitat &amp; Hunt Layouts</h3>
+          <p>
+            Effective habitat isn't built from a template. We walk the property, understand
+            how animals are actually using it, and design layouts around wind, pressure,
+            bedding, and access — so the plan holds up after years of real hunting, not just
+            the first season.
+          </p>
+          <a href="landowners.html" class="card-link">For hunters &amp; habitat owners →</a>
+        </article>
+
+        <article class="card">
+          <h3>Timber Stand Improvement</h3>
+          <p>
+            A lot of New England woodlots have been selectively cut or left unmanaged long
+            enough that the next owner inherits someone else's decisions. We help you
+            understand what you have, identify the trees worth investing in, and improve
+            stand health without trading future value for short-term results.
+          </p>
+          <a href="services.html" class="card-link">Full services overview →</a>
+        </article>
+
+        <article class="card">
+          <h3>Land Stewardship Planning</h3>
+          <p>
+            Multi-year plans that sequence habitat, timber, and access work so decisions
+            made today don't conflict with what you want five years from now. The goal is
+            a property that's more flexible and more valuable over time — not one that's
+            been optimized into a corner.
+          </p>
+          <a href="landowners.html" class="card-link">For landowners →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Who we work with -->
+  <section class="section muted" id="who-we-work-with">
+    <div class="container">
+      <header class="section-header">
+        <h2>Who we work with</h2>
         <p>
-          Mark and release the right trees, improve health and growth, and
-          set up future harvests without wrecking your ground or your access.
+          Most work falls into two categories. Both start the same way —
+          walking the ground together and figuring out what the property can actually do.
         </p>
-      </article>
+      </header>
 
-      <article class="card">
-        <h3>Land Stewardship Planning</h3>
+      <div class="grid two">
+
+        <article class="card">
+          <h3>Landowners</h3>
+          <p>
+            Whether you're managing a family woodlot, improving hunting on your own ground,
+            or thinking about timber value and what to pass down — we help you figure out
+            what to do first, what to hold off on, and why the sequence matters.
+          </p>
+          <br />
+          <a href="landowners.html" class="btn primary">For landowners</a>
+        </article>
+
+        <article class="card">
+          <h3>Contractors &amp; GCs</h3>
+          <p>
+            Land-heavy projects go smoother when access, layout, and owner expectations
+            are sorted before machines show up. We support contractors on site layout,
+            clearing decisions, and owner-facing coordination.
+          </p>
+          <br />
+          <a href="contractors.html" class="btn primary">For contractors</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About snapshot -->
+  <section class="section" id="about-snapshot">
+    <div class="container split">
+
+      <div>
+        <h2>Owner-operated, New England–focused.</h2>
         <p>
-          Multi-year plans that balance wildlife, timber income, and
-          conservation so your land looks better in 20–30 years than it does today.
+          23 Timber Co. is built around one idea: good land decisions come from
+          understanding the ground, not just reading it on a screen. We combine
+          forestry, habitat design, and real field experience across northern
+          hardwood and mixed-wood stands.
         </p>
-      </article>
+        <p>
+          The work is practical. Plans are built around realistic budgets, honest
+          tradeoffs, and what you can actually execute — not what looks good in a report.
+        </p>
+        <ul class="checklist">
+          <li>New Hampshire, Maine, and northern New England</li>
+          <li>Habitat and timber experience on the same ground</li>
+          <li>Aerial mapping support through UAS partnership when it adds real value</li>
+        </ul>
+      </div>
+
+      <div class="about-highlight">
+        <h3>How it starts</h3>
+        <ol>
+          <li>We walk the property together and talk through your goals.</li>
+          <li>We map current conditions and identify what matters most.</li>
+          <li>You get a phased plan with clear priorities and realistic costs.</li>
+        </ol>
+        <a href="contact.html" class="btn primary" style="margin-top: 1.25rem; display: inline-block;">Schedule a walk-through</a>
+      </div>
+
     </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> 23 Timber Co. All rights reserved.</p>
+    <p class="footer-meta">Serving New Hampshire, Maine, and northern New England.</p>
   </div>
-</section>
-
-    <!-- About Snapshot -->
-   <section class="section muted" id="about-snapshot">
-  <div class="container split">
-    <div>
-      <h2>Walk your land with someone who actually hunts & works it.</h2>
-      <p>
-        23 Timber Co. exists for landowners who want more than a quick logging job
-        or a food plot tossed into a field.
-      </p>
-      <p>
-        We blend forestry, habitat design, and hard-earned field experience so you
-        get more out of your acres without burning them out.
-      </p>
-      <ul class="checklist">
-        <li>New England–focused, with northern hardwood and mixed-wood experience</li>
-        <li>Layouts built from real hunts, not just software and theory</li>
-        <li>Timber decisions made with future value and access in mind</li>
-      </ul>
-    </div>
-
-    <div class="about-highlight">
-      <h3>How it works</h3>
-      <ol>
-        <li>We walk the property together.</li>
-        <li>We map current conditions and future opportunities.</li>
-        <li>You get a phased plan with clear priorities and rough costs.</li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> 23 Timber Co. All rights reserved.</p>
-      <p class="footer-meta">Serving New Hampshire, Maine, and northern New England.</p>
-    </div>
-  </footer>
+</footer>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
@@ -168,5 +214,6 @@
     navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 </script>
+
 </body>
 </html>
