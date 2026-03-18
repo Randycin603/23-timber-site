@@ -92,6 +92,7 @@ body {
 
 main {
   background: radial-gradient(circle at top, #141414 0, #0b0b0b 55%);
+  padding-top: 64px; /* clears fixed header consistently across all pages */
 }
 
 .section {
@@ -274,7 +275,7 @@ main {
 -------------------------- */
 
 .hero {
-  margin-top: 3.5rem; /* space for fixed header */
+  margin-top: 0;
 }
 
 /* HERO LOGO WATERMARK */
@@ -979,7 +980,7 @@ main {
 
 /* hero spacing below fixed header */
 .note-hero {
-  padding: 6.5rem 0 2.25rem;
+  padding: 2.5rem 0 2.25rem;
   border-bottom: 1px solid rgba(255,255,255,0.08);
   background: radial-gradient(circle at top, #111 0%, #050505 60%);
 }
