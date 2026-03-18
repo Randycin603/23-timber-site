@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact | 23 Timber Co.</title>
-  <meta name="description" content="Get in touch with 23 Timber Co. to schedule a site walk and start a land stewardship plan." />
+  <meta name="description" content="Get in touch with 23 Timber Co. to schedule a site walk or start a land planning conversation." />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
- <header class="site-header">
+
+<header class="site-header">
   <div class="container header-inner">
 
     <a href="index.html" class="brand">
@@ -20,69 +21,134 @@
     </a>
 
     <nav class="main-nav">
-      <button class="nav-toggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-<ul class="nav-links">
-  <li><a href="index.html">Home</a></li>
-  <li><a href="services.html">Services</a></li>
-  <li><a href="landowners.html">Land Owners</a></li>
-  <li><a href="contractors.html">Contractors</a></li>
-  <li><a href="about.html">About</a></li>
-  <li><a href="notes.html">Notes from the Underground</a></li>
-  <li><a href="contact.html">Contact</a></li>
-</ul>
+
+      <ul class="nav-links" id="primary-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="landowners.html">Land Owners</a></li>
+        <li><a href="contractors.html">Contractors</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="notes.html">Notes from the Underground</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
 
   </div>
 </header>
 
- <main>
-  <section class="section">
+<main>
+
+  <section class="section" style="padding-top: 6rem;">
     <div class="container split">
+
+      <!-- Left: context -->
       <div>
-        <h1>Contact</h1>
+        <h1>Get in touch</h1>
         <p>
-          Ready to walk your land or just want to kick around ideas? Send a note
-          with a quick description of your property and what you’re hoping to do.
+          Whether you're ready to walk a property or just want to think out loud
+          about what your land could be doing — send a note. The more context you
+          can share upfront, the more useful the first conversation will be.
         </p>
         <p>
-          The more detail you can share—acreage, town, current use, main goals—the
-          better we can prep before the first conversation.
+          Helpful to include: acreage, town or general area, current use, and
+          what you're hoping to accomplish. No need to have it all figured out —
+          that's what the conversation is for.
         </p>
+
+        <div style="margin-top: 2rem;">
+          <p style="margin: 0 0 0.25rem;"><strong>Email</strong></p>
+          <a href="mailto:info@23timberco.com" style="color: var(--accent); text-decoration: none; font-size: 0.95rem;">info@23timberco.com</a>
+        </div>
+
+        <div style="margin-top: 1.25rem;">
+          <p style="margin: 0 0 0.25rem;"><strong>Location</strong></p>
+          <p style="margin: 0; color: var(--text-muted); font-size: 0.92rem;">
+            Based in New Hampshire, working across northern New England.
+          </p>
+        </div>
+
+        <div style="margin-top: 1.25rem;">
+          <p style="margin: 0 0 0.25rem;"><strong>Response time</strong></p>
+          <p style="margin: 0; color: var(--text-muted); font-size: 0.92rem;">
+            Usually within one business day. For urgent project needs,
+            email directly.
+          </p>
+        </div>
       </div>
 
+      <!-- Right: form -->
+      <!-- 
+        FORMSPREE SETUP:
+        1. Create a free account at formspree.io
+        2. Create a new form and copy your form ID
+        3. Replace "YOUR_FORM_ID" in the action URL below with your actual ID
+        Example: action="https://formspree.io/f/abcd1234"
+      -->
       <div class="about-highlight">
-        <h2>Get in touch</h2>
-        <p><strong>Email</strong><br>
-          <a href="mailto:info@23timberco.com">info@23timberco.com</a>
-        </p>
-        <p><strong>Location</strong><br>
-          Based in New Hampshire, working across northern New England.
-        </p>
-        <p><strong>Next step</strong><br>
-          Send an email and we’ll follow up with questions and options for a
-          site visit or remote planning call.
-        </p>
+        <h2 style="margin-top: 0;">Send a message</h2>
+
+        <form action="action="https://formspree.io/f/mvgradvn"" method="POST" style="display: flex; flex-direction: column; gap: 1rem;">
+
+          <div>
+            <label for="name" style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.35rem;">Your name</label>
+            <input type="text" id="name" name="name" required
+              style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-soft); border-radius: 8px; padding: 0.6rem 0.8rem; color: var(--text-main); font-size: 0.92rem; outline: none;" />
+          </div>
+
+          <div>
+            <label for="email" style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.35rem;">Email address</label>
+            <input type="email" id="email" name="email" required
+              style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-soft); border-radius: 8px; padding: 0.6rem 0.8rem; color: var(--text-main); font-size: 0.92rem; outline: none;" />
+          </div>
+
+          <div>
+            <label for="acreage" style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.35rem;">Acreage &amp; location <span style="opacity: 0.5;">(optional)</span></label>
+            <input type="text" id="acreage" name="acreage"
+              placeholder="e.g. 45 acres, central NH"
+              style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-soft); border-radius: 8px; padding: 0.6rem 0.8rem; color: var(--text-main); font-size: 0.92rem; outline: none;" />
+          </div>
+
+          <div>
+            <label for="message" style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.35rem;">What are you working on?</label>
+            <textarea id="message" name="message" rows="5" required
+              placeholder="Current use, main goals, questions — whatever's relevant."
+              style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-soft); border-radius: 8px; padding: 0.6rem 0.8rem; color: var(--text-main); font-size: 0.92rem; outline: none; resize: vertical; font-family: inherit;"></textarea>
+          </div>
+
+          <button type="submit" class="btn primary" style="align-self: flex-start;">
+            Send message
+          </button>
+
+        </form>
       </div>
+
     </div>
   </section>
+
 </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> 23 Timber Co. All rights reserved.</p>
-      <p class="footer-meta">Serving New Hampshire, Maine, and northern New England.</p>
-    </div>
-  </footer>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> 23 Timber Co. All rights reserved.</p>
+    <p class="footer-meta">Serving New Hampshire, Maine, and northern New England.</p>
+  </div>
+</footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      navToggle.classList.toggle('open');
-    });
-  </script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+</script>
+
 </body>
 </html>
