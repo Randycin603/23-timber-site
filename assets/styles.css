@@ -1222,15 +1222,21 @@ main {
 
 .isa-about-credential {
   display: flex;
-  align-items: flex-start;
-  gap: 20px;
+  align-items: center;
+  gap: 16px;
   margin-top: 1.25rem;
-  padding: 1.25rem;
+  padding: 1rem;
   border-left: 4px solid var(--accent);
   background: var(--bg-muted);
 }
 
+.isa-about-credential img {
+  height: 70px;
+  width: auto;
+  flex-shrink: 0;
+}
+
 .isa-about-text {
-  font-size: 0.95em;
-  line-height: 1.7;
+  font-size: 0.875em;
+  line-height: 1.6;
 }
