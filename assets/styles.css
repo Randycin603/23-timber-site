@@ -9,11 +9,11 @@
 }
 
 :root {
-  /* Dark Wilderness palette (Option C) */
+  /* Dark Wilderness palette */
 
   /* Backgrounds */
-  --bg: #0b0b0b;          /* nearly black */
-  --bg-elevated: #141414; /* cards / elevated surfaces */
+  --bg: #0b0b0b;
+  --bg-elevated: #141414;
   --bg-soft: #050608;
 
   /* Text */
@@ -23,16 +23,14 @@
   /* Borders */
   --border-soft: #262626;
 
-  /* Accents – greens + earth */
-  --accent: #3da35d;        /* natural green */
-  --accent-soft: #659e63;   /* spruce green */
-  --accent-softest: #243624;/* deep forest */
+  /* Accents */
+  --accent: #3da35d;
+  --accent-soft: #659e63;
+  --accent-softest: #243624;
   --accent-contrast: #f9faf7;
+  --accent-subtle: #c08457;
 
-  /* Occasional warm highlight (for links, tiny details) */
-  --accent-subtle: #c08457; /* soft earthy brown/orange */
-
-  /* Radius + shadows (leave mostly as-is) */
+  /* Radius + shadows */
   --radius-lg: 1.3rem;
   --radius-md: 0.9rem;
 
@@ -40,37 +38,11 @@
   --shadow-subtle: 0 8px 24px rgba(0, 0, 0, 0.45);
 }
 
-.site-header {
-  background: #000 !important;
-  border-bottom: 1px solid #222 !important;
-}
-.site-header {
-  z-index: 9999 !important;
-}
-.card, .about-highlight {
-  border: 1px solid #222 !important;
-  background: #000 !important;
-}
-.about-highlight.soft {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.06);
-  box-shadow: none;
-}
-
-.section.cta, .section.muted {
-  background: #000 !important;
-}
-
-footer.site-footer {
-  background: #000 !important;
-  border-top: 1px solid #222 !important;
-}
 html,
 body {
   margin: 0;
   padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background-color: var(--bg);
   color: var(--text-main);
 }
@@ -92,7 +64,7 @@ body {
 
 main {
   background: radial-gradient(circle at top, #141414 0, #0b0b0b 55%);
-  padding-top: 64px; /* clears fixed header consistently across all pages */
+  padding-top: 64px;
 }
 
 .section {
@@ -123,21 +95,14 @@ main {
    Header & Nav
 -------------------------- */
 
-.brand-logo {
-  height: 42px;      /* adjust size */
-  width: auto;
-  object-fit: contain;
-  display: block;
-}
-
 .site-header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 20;
-  background: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  background: #000 !important;
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid #262626;
+  border-bottom: 1px solid #222 !important;
 }
 
 .header-inner {
@@ -145,19 +110,6 @@ main {
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem 0;
-}
-/* Logo in header */
-.brand-logo {
-  height: 40px;      /* controls how tall the logo is */
-  width: auto;       /* keeps aspect ratio */
-  display: block;
-  margin-right: 0.75rem;
-}
-
-.brand-logo {
-  height: 42px;     /* try 42–52px for size */
-  width: auto;
-  display: block;
 }
 
 .brand {
@@ -168,19 +120,12 @@ main {
   color: var(--text-main);
 }
 
-.brand-mark {
-  width: 32px;
-  height: 32px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 30% 20%, #22c55e, #14532d);
-  border: 2px solid rgba(15, 23, 42, 0.9);
-  color: #f9fafb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 0.9rem;
-  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.35);
+.brand-logo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin-right: 0.75rem;
 }
 
 .brand-text {
@@ -215,6 +160,10 @@ main {
 }
 
 .nav-links a {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  line-height: 1;
   text-decoration: none;
   font-size: 0.92rem;
   color: var(--text-muted);
@@ -263,59 +212,30 @@ main {
   background-color: #e5e7eb;
   border-radius: 999px;
 }
-.nav-links a {
-  display: flex;
-  align-items: center;
-  height: 40px;          /* 👈 forces identical vertical box */
-  line-height: 1;        /* 👈 removes font metric drift */
-}
 
 /* -------------------------
    Hero (Video Background)
 -------------------------- */
 
-.hero {
-  margin-top: 0;
-}
-
-/* HERO LOGO WATERMARK */
-.hero-logo-mark {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  z-index: 5;               /* higher than the overlay */
-  opacity: 0.22;
-  pointer-events: none;
-}
-
-.hero-logo-mark img {
-  height: 90px;
-  width: auto;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
-}
-
-/* Hero wrapper with video */
 .video-hero {
   position: relative;
-  min-height: 92vh;           /* basically full screen */
+  min-height: 92vh;
   display: flex;
-  align-items: flex-start;    /* content toward top */
+  align-items: flex-start;
   justify-content: flex-start;
   color: #f9fafb;
   overflow: hidden;
 }
 
-/* Video fills the hero */
 .hero-video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0;  
+  z-index: 0;
 }
 
-/* Dark overlay on the video so text is readable */
 .video-hero::before {
   content: "";
   position: absolute;
@@ -325,10 +245,9 @@ main {
     rgba(0, 0, 0, 0.25),
     rgba(0, 0, 0, 0.75)
   );
-   z-index: 1; 
+  z-index: 1;
 }
 
-/* Layout for the text container inside the hero */
 .hero-inner {
   position: relative;
   display: flex;
@@ -337,13 +256,12 @@ main {
   max-width: 100%;
   margin: 0;
   padding: 4.5rem 0 0 3rem;
-  z-index: 2;                 /* <-- text above overlay */
+  z-index: 2;
 }
 
-/* Text panel */
 .hero-copy {
-  max-width: 24rem;                    /* smaller box */
-  background: rgba(0, 0, 0, 0.10);     /* light translucent */
+  max-width: 24rem;
+  background: rgba(0, 0, 0, 0.10);
   padding: 1.4rem 1.6rem;
   border-radius: 10px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
@@ -364,36 +282,422 @@ main {
   gap: 0.9rem;
 }
 
+.hero-logo-mark {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 5;
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.hero-logo-mark img {
+  height: 90px;
+  width: auto;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+}
+
 /* -------------------------
-   Hero – Responsive
+   Feature Bands (Services)
 -------------------------- */
 
-@media (max-width: 768px) {
-  .video-hero {
-    min-height: 70vh;
-  }
+.feature-band {
+  position: relative;
+  padding: 4rem 0;
+  border-top: 1px solid rgba(61, 163, 93, 0.18);
+}
 
-  .hero-inner {
-    padding: 4.5rem 1.5rem 0 1.5rem; /* less side padding on phones */
-    justify-content: center;
-  }
+.feature-band:nth-of-type(odd) {
+  background: radial-gradient(ellipse at 20% 50%, rgba(61,163,93,0.04) 0%, transparent 60%),
+              #0b0b0b;
+}
 
-  .hero-copy {
-    max-width: 100%;
-  }
+.feature-band:nth-of-type(even) {
+  background: radial-gradient(ellipse at 80% 50%, rgba(61,163,93,0.04) 0%, transparent 60%),
+              #0d0d0d;
+}
 
-  .hero-copy h1 {
-    font-size: 2.2rem;
-  }
+.feature-inner {
+  display: flex;
+  justify-content: center;
+}
 
-  .hero-actions {
-    flex-direction: column;
-    align-items: flex-start;
+.feature-band.right .feature-inner {
+  justify-content: center;
+}
+
+.feature-card {
+  width: min(720px, 100%);
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-top: 2px solid rgba(61, 163, 93, 0.35);
+  border-radius: 18px;
+  padding: 2rem 2.25rem;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+}
+
+.feature-card h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+  color: var(--accent-contrast);
+}
+
+.feature-card p {
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.feature-card h4 {
+  margin: 1.25rem 0 0.5rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+}
+
+.feature-card::before {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+}
+
+/* -------------------------
+   Grids
+-------------------------- */
+
+.grid {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 900px) {
+  .grid.two  { grid-template-columns: 1fr; }
+  .grid.three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px) {
+  .grid.three { grid-template-columns: 1fr; }
+}
+
+/* -------------------------
+   Cards
+-------------------------- */
+
+.card {
+  background: #000 !important;
+  border-radius: var(--radius-lg);
+  padding: 1.6rem 1.8rem;
+  border: 1px solid #222 !important;
+  box-shadow: var(--shadow-subtle);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  border-color: rgba(61, 163, 93, 0.3) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+}
+
+.card h3,
+.card h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.15rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.card h4 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+.card .muted {
+  color: var(--text-muted);
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.card-link:hover {
+  color: var(--accent-soft);
+  text-decoration: underline;
+}
+
+/* -------------------------
+   About Highlights
+-------------------------- */
+
+.about-highlight {
+  background: radial-gradient(circle at top, #18140f, #0b0907);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem 1.7rem;
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-subtle);
+}
+
+.about-highlight.soft {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: none;
+}
+
+/* -------------------------
+   Split layout
+-------------------------- */
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+  gap: 2.2rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .split { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* -------------------------
+   Team / About
+-------------------------- */
+
+.about-team-grid {
+  margin-top: 1.5rem;
+}
+
+.team-card {
+  padding: 1.25rem;
+}
+
+.team-inner {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.team-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.team-content {
+  min-width: 0;
+}
+
+.team-content h3 {
+  margin-top: 0;
+}
+
+.team-card .about-highlight.soft {
+  padding: 1rem 1.1rem;
+  border-radius: 14px;
+}
+
+.team-card .about-highlight.soft h4 {
+  margin-bottom: 0.5rem;
+}
+
+.isa-about-credential {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border-left: 4px solid var(--accent);
+  background: rgba(61, 163, 93, 0.05);
+  border-radius: 0 8px 8px 0;
+}
+
+.isa-about-credential img {
+  height: 70px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.isa-about-text {
+  font-size: 0.875em;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .team-inner {
+    grid-template-columns: 1fr;
+  }
+  .team-photo {
+    width: 100%;
+    height: 220px;
   }
 }
 
 /* -------------------------
-   Notes from the Underground
+   Lists
+-------------------------- */
+
+.checklist {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.checklist li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.4rem;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
+/* -------------------------
+   Buttons
+-------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: rgba(10, 10, 10, 0.85);
+  color: var(--text-main);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease,
+    box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+  border-color: rgba(22, 163, 74, 0.9);
+  color: var(--accent-contrast);
+}
+
+.btn.ghost {
+  background: rgba(15, 23, 42, 0.75);
+}
+
+.btn.full {
+  width: 100%;
+  justify-content: center;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.55);
+  border-color: rgba(148, 163, 184, 0.8);
+}
+
+.btn.primary:hover {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+}
+
+/* -------------------------
+   CTA
+-------------------------- */
+
+.section.cta {
+  background: radial-gradient(circle at top left, #1b3a23, #0b0907);
+  padding: 4.5rem 0;
+  border-top: 1px solid rgba(61, 163, 93, 0.2);
+}
+
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+.cta-inner h2 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+  line-height: 1.2;
+}
+
+.cta-inner p {
+  margin: 0;
+  max-width: 38ch;
+  color: #d1fae5;
+  opacity: 0.9;
+  line-height: 1.55;
+}
+
+.section.cta .btn {
+  white-space: nowrap;
+}
+
+/* -------------------------
+   Footer
+-------------------------- */
+
+.site-footer {
+  background: #000 !important;
+  border-top: 1px solid #222 !important;
+  padding: 1.2rem 0 1.5rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.footer-meta {
+  opacity: 0.9;
+}
+
+/* -------------------------
+   Notes / Field Notes
 -------------------------- */
 
 .notes-hero {
@@ -464,290 +768,128 @@ main {
   text-decoration: underline;
 }
 
-@media (max-width: 900px) {
-  .notes-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
+.note-wrap {
+  max-width: 980px;
+  margin: 0 auto;
 }
-/* -------------------------
-   Buttons
--------------------------- */
 
-.btn {
-  display: inline-flex;
+.note-hero {
+  padding: 2.5rem 0 2.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: radial-gradient(circle at top, #111 0%, #050505 60%);
+}
+
+.note-kicker {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin: 0 0 0.5rem;
+}
+
+.note-title {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  line-height: 1.15;
+}
+
+.note-lead {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.note-hero-brand {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 0.65rem 1.6rem;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  border: 1px solid rgba(148, 163, 184, 0.5);
-  background: rgba(10, 10, 10, 0.85); /* dark neutral, not navy */
-  color: var(--text-main);
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.1s ease,
-    box-shadow 0.2s ease, border-color 0.2s ease;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+  justify-content: flex-start;
+  margin: 0 0 0.9rem 0;
+  opacity: 0.95;
 }
 
-.btn.primary {
-  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
-  border-color: rgba(22, 163, 74, 0.9);
-  color: var(--accent-contrast);
+.note-hero-logo {
+  height: 56px;
+  width: auto;
+  display: block;
 }
 
-.btn.ghost {
-  background: rgba(15, 23, 42, 0.75);
+.note-hero-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 2.25rem;
+  align-items: center;
 }
 
-.btn.full {
-  width: 100%;
-  justify-content: center;
+.note-hero-badge {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.55);
-  border-color: rgba(148, 163, 184, 0.8);
+.note-hero-badge-img {
+  width: 108px;
+  height: auto;
+  display: block;
+  opacity: 0.95;
+  filter: drop-shadow(0 12px 28px rgba(0,0,0,0.7));
 }
 
-.btn.primary:hover {
-  background: linear-gradient(135deg, #16a34a, #15803d);
+.note-body {
+  padding: 2.5rem 0 4rem;
 }
 
-/* -------------------------
-   Cards, Grids, Split
--------------------------- */
-
-.feature-band{
-  position: relative;
-  padding: 3.5rem 0;
-  background:
-    linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
-    var(--bg) center/cover no-repeat;
-}
-.feature-inner{ display:flex; justify-content:flex-start; }
-.feature-band.right .feature-inner{ justify-content:flex-end; }
-.feature-card{
-  width: min(560px, 100%);
-  background: rgba(0,0,0,0.65);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
-  padding: 1.6rem;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+.note-article {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 2.25rem 2.4rem;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
   backdrop-filter: blur(6px);
 }
-.grid.two{
-  display:grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem;
-}
-@media (max-width: 900px){
-  .grid.two{ grid-template-columns: 1fr; }
-  .feature-inner, .feature-band.right .feature-inner{ justify-content:center; }
-  .feature-band{ padding: 2.5rem 0; }
-}
-.about-highlight.soft{
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.06);
-  box-shadow: none;
+
+.note-article p {
+  margin: 0 0 1.1rem;
+  line-height: 1.75;
 }
 
-
-.grid {
-  display: grid;
-  gap: 1.75rem;
-}
-.grid.two{
-  display:grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem;
-}
-@media (max-width: 900px){
-  .grid.two{ grid-template-columns: 1fr; }
+.note-article h2 {
+  margin: 2rem 0 0.75rem;
+  font-size: 1.3rem;
 }
 
-
-.grid.three {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.note-article h2:first-child {
+  margin-top: 0;
 }
 
-.card {
-  background: radial-gradient(circle at top left, #141414, #080808);
-  border-radius: var(--radius-lg);
-  padding: 1.6rem 1.8rem;
-  border: 1px solid var(--border-soft);
-  box-shadow: var(--shadow-subtle);
+.note-article ul {
+  margin: 0.75rem 0 1.25rem 1.25rem;
 }
 
-.card h3,
-.card h2 {
-  margin: 0 0 0.6rem;
-  font-size: 1.15rem;
-}
-
-.card p {
-  margin: 0;
-  color: var(--text-muted);
-  font-size: 0.92rem;
-}
-
-.split {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
-  gap: 2.2rem;
-  align-items: start;
-}
-
-.about-highlight {
-  background: radial-gradient(circle at top, #18140f, #0b0907); /* dark soil */
-  border-radius: var(--radius-lg);
-  padding: 1.6rem 1.7rem;
-  border: 1px solid var(--border-soft);
-  box-shadow: var(--shadow-subtle);
-}
-/* === ABOUT PAGE PORTRAIT IMAGES === */
-.team-photo {
-  width: 220px;           /* perfect professional size */
-  height: auto;
-  border-radius: 12px;    /* slight round edges */
-  object-fit: cover;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-  margin-bottom: 1rem;
-}
-
-/* Ensure photos don’t blow up on tiny screens */
-@media (max-width: 600px) {
-  .team-photo {
-    width: 160px;
-  }
-}
-
-.team-card {
-  margin-bottom: 3rem;
-}
-
-.team-name {
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
-  font-weight: 700;
-}
-
-.team-flex {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-}
-
-.team-photo {
-  width: 220px;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-.team-content {
-  flex: 1;
-  min-width: 280px;
-}
-
-/* -------------------------
-   Lists
--------------------------- */
-
-.checklist {
-  list-style: none;
-  margin: 1rem 0 0;
-  padding: 0;
-}
-
-.checklist li {
-  position: relative;
-  padding-left: 1.4rem;
+.note-article li {
   margin-bottom: 0.4rem;
-  color: var(--text-muted);
-  font-size: 0.92rem;
 }
 
-.checklist li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #22c55e;
-  font-size: 0.85rem;
+.note-article blockquote {
+  margin: 1.25rem 0;
+  padding: 1.1rem 1.25rem;
+  border-left: 4px solid var(--accent);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  font-style: italic;
+  line-height: 1.6;
 }
 
-/* -------------------------
-   CTA
--------------------------- */
-
-.section.cta {
-  background: radial-gradient(circle at top left, #1b3a23, #0b0907);
-  padding: 4.5rem 0;
-  border-top: 1px solid rgba(255,255,255,0.06);
+.note-article hr {
+  border: none;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.10);
+  margin: 2rem 0;
 }
 
-.cta-inner {
+.note-nav {
+  margin-top: 2rem;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2.5rem;
-}
-
-.cta-inner h2 {
-  margin: 0 0 0.5rem;
-  font-size: clamp(1.6rem, 2.5vw, 2.1rem);
-  line-height: 1.2;
-}
-
-.cta-inner p {
-  margin: 0;
-  max-width: 38ch;
-  color: #d1fae5;
-  opacity: 0.9;
-  line-height: 1.55;
-}
-
-/* CTA buttons tighten and stand out */
-.section.cta .btn {
-  white-space: nowrap;
-}
-
-/* Mobile handling */
-@media (max-width: 768px) {
-  .cta-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.25rem;
-  }
-
-  .cta-inner p {
-    max-width: 100%;
-  }
-}
-
-/* -------------------------
-   Footer
--------------------------- */
-
-.site-footer {
-  border-top: 1px solid #2b241b;   /* earthy border */
-  background: #050403;             /* dark earth */
-  padding: 1.2rem 0 1.5rem;
-}
-
-.footer-inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  font-size: 0.78rem;
-  color: var(--text-muted);
-}
-
-.footer-meta {
-  opacity: 0.9;
 }
 
 /* -------------------------
@@ -755,20 +897,17 @@ main {
 -------------------------- */
 
 @media (max-width: 900px) {
-  .grid.three {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .split {
+  .notes-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .hero-inner {
+  .feature-inner,
+  .feature-band.right .feature-inner {
     justify-content: center;
   }
 
-  .hero-copy {
-    text-align: left;
+  .feature-band {
+    padding: 2.5rem 0;
   }
 }
 
@@ -778,9 +917,19 @@ main {
   }
 
   .nav-toggle {
-    display: flex;
+    display: flex !important;
     position: relative;
     z-index: 10000;
+  }
+
+  .main-nav {
+    display: flex !important;
+    align-items: center;
+  }
+
+  .header-inner {
+    position: relative;
+    z-index: 9999;
   }
 
   .nav-links {
@@ -814,11 +963,19 @@ main {
     display: block;
     padding: 0.5rem 0;
   }
-}
 
   .video-hero {
+    min-height: 70vh;
     height: 70vh;
-    min-height: 440px;
+  }
+
+  .hero-inner {
+    padding: 4.5rem 1.5rem 0 1.5rem;
+    justify-content: center;
+  }
+
+  .hero-copy {
+    max-width: 100%;
   }
 
   .hero-copy h1 {
@@ -830,13 +987,36 @@ main {
     align-items: flex-start;
   }
 
-  .grid.three {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
   .cta-inner {
     flex-direction: column;
     align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .cta-inner p {
+    max-width: 100%;
+  }
+
+  .note-hero {
+    padding-top: 5.75rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .note-title {
+    font-size: 1.6rem;
+  }
+
+  .note-article {
+    padding: 1.6rem 1.4rem;
+  }
+
+  .note-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .note-hero-badge-img {
+    width: 72px;
   }
 }
 
@@ -852,407 +1032,4 @@ main {
   .section {
     padding: 3.5rem 0;
   }
-}
-
-/* -------------------------
-   Notes / Field Notes Styling
--------------------------- */
-
-/* Narrow reading width */
-.container.narrow {
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-/* Note top section */
-.note-hero {
-  padding-top: 6rem;           /* clears fixed header */
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border-soft);
-  background: radial-gradient(circle at top, #111111 0, #050505 60%);
-}
-
-.note-hero h1 {
-  font-size: 0.85rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin: 0 0 0.35rem;
-}
-
-.note-hero h2 {
-  font-size: 1.9rem;
-  margin: 0 0 0.5rem;
-}
-
-.note-meta {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-/* Body wrapper */
-.note-body {
-  padding: 2.5rem 0 4rem;
-}
-
-/* Main note card */
-.note-article {
-  background: radial-gradient(circle at top left, #141414, #050505);
-  border-radius: 14px;
-  padding: 2rem 2.25rem;
-  border: 1px solid var(--border-soft);
-  box-shadow: var(--shadow-subtle);
-}
-
-.note-article p {
-  line-height: 1.7;
-  margin: 0 0 1.1rem;
-}
-
-/* Headings inside notes */
-.note-article h2 {
-  margin: 2rem 0 0.75rem;
-  font-size: 1.25rem;
-}
-
-.note-article ul {
-  margin: 0 0 1.2rem 1.2rem;
-  padding: 0;
-}
-
-.note-article li {
-  margin-bottom: 0.35rem;
-}
-
-/* Blockquotes: pull-out thoughts */
-.note-article blockquote {
-  margin: 1.4rem 0;
-  padding-left: 1rem;
-  border-left: 3px solid var(--accent);
-  color: var(--text-main);
-  font-style: italic;
-}
-
-/* Back button spacing */
-.note-article .btn {
-  margin-top: 1.5rem;
-}
-
-/* Mobile tweaks for notes */
-@media (max-width: 768px) {
-  .note-hero {
-    padding-top: 5.5rem;
-    padding-bottom: 1rem;
-  }
-
-  .note-article {
-    padding: 1.6rem 1.4rem;
-  }
-}
-/* ========= DEBUG: force hamburger visible on mobile ========= */
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: flex !important;
-    position: relative;
-    z-index: 9999;
-  }
-
-  .main-nav {
-    display: flex !important;
-    align-items: center;
-  }
-
-  .header-inner {
-    position: relative;
-    z-index: 9999;
-  }
-}
-/* ==========================================================
-   NOTES RESET (isolated + predictable)
-   - Index list uses .note-list-card
-   - Note pages use ONE wrapper: .note-article
-========================================================== */
-
-.note-wrap {
-  max-width: 980px;
-  margin: 0 auto;
-}
-
-/* hero spacing below fixed header */
-.note-hero {
-  padding: 2.5rem 0 2.25rem;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  background: radial-gradient(circle at top, #111 0%, #050505 60%);
-}
-
-.note-kicker {
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  opacity: 0.75;
-  margin: 0 0 0.5rem;
-}
-
-.note-title {
-  margin: 0 0 0.5rem;
-  font-size: 2rem;
-  line-height: 1.15;
-}
-
-.note-meta {
-  margin: 0 0 1rem;
-  opacity: 0.7;
-}
-
-.note-lead {
-  margin: 0;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  opacity: 0.95;
-}
-
-/* optional logo mark in hero */
-.note-hero-brand {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.9rem;
-  opacity: 0.95;
-}
-.note-hero-logo {
-  height: 52px;
-  width: auto;
-  display: block;
-}
-
-/* NOTE BODY */
-.note-body {
-  padding: 2.5rem 0 4rem;
-}
-
-/* ONE CARD ONLY: note pages must wrap all content in .note-article */
-.note-article {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 18px;
-  padding: 2.25rem 2.4rem;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
-  backdrop-filter: blur(6px);
-}
-
-.note-article p {
-  margin: 0 0 1.1rem;
-  line-height: 1.75;
-}
-
-.note-article h2 {
-  margin: 2rem 0 0.75rem;
-  font-size: 1.3rem;
-}
-
-.note-article h2:first-child {
-  margin-top: 0;
-}
-
-.note-article ul {
-  margin: 0.75rem 0 1.25rem 1.25rem;
-}
-
-.note-article li {
-  margin-bottom: 0.4rem;
-}
-
-.note-article blockquote {
-  margin: 1.25rem 0;
-  padding: 1.1rem 1.25rem;
-  border-left: 4px solid var(--accent);
-  background: rgba(255,255,255,0.04);
-  border-radius: 12px;
-  font-style: italic;
-  line-height: 1.6;
-}
-
-.note-article hr {
-  border: none;
-  height: 1px;
-  background: rgba(255,255,255,0.10);
-  margin: 2rem 0;
-}
-
-.note-nav {
-  margin-top: 2rem;
-  display: flex;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .note-hero { padding: 5.75rem 0 1.75rem; }
-  .note-title { font-size: 1.6rem; }
-  .note-article { padding: 1.6rem 1.4rem; }
-}
-
-.note-hero-brand{
-  display:flex;
-  align-items:center;
-  justify-content:flex-start;
-  margin: 0 0 0.9rem 0;
-  opacity: 0.95;
-}
-
-.note-hero-logo{
-  height: 56px;
-  width: auto;
-  display:block;
-}
-
-.note-hero-grid{
-  display:grid;
-  grid-template-columns:120px 1fr;
-  gap:2.25rem;
-  align-items:center;
-}
-
-.note-hero-badge{
-  display:flex;
-  align-items:center;
-  justify-content:flex-start;
-}
-
-.note-hero-badge-img{
-  width:108px;
-  height:auto;
-  display:block;
-  opacity:.95;
-  filter: drop-shadow(0 12px 28px rgba(0,0,0,.7));
-}
-
-@media (max-width:768px){
-  .note-hero-grid{ grid-template-columns:1fr; gap:1rem; }
-  .note-hero-badge-img{ width:72px; }
-}
-
-/* card directional links */
-.card-link {
-  display: inline-block;
-  margin-top: 1rem;
-  font-size: 0.85rem;
-  color: var(--accent);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.card-link:hover {
-  color: var(--accent-soft);
-  text-decoration: underline;
-}
-.card h4{
-  margin: 1rem 0 .5rem;
-  font-size: 1rem;
-  opacity: .95;
-}
-.card .muted{
-  color: var(--text-muted);
-}
-/* ABOUT: keep the top split balanced */
-.about-top{
-  align-items: start;
-  gap: 2rem;
-}
-
-/* ABOUT: team grid spacing */
-.about-team-grid{
-  margin-top: 1.5rem;
-}
-
-/* ABOUT: team cards (image cannot explode layout) */
-.team-card{
-  padding: 1.25rem;
-}
-
-.team-inner{
-  display: grid;
-  grid-template-columns: 160px minmax(0, 1fr);
-  gap: 1.25rem;
-  align-items: start;
-}
-
-/* The key: a fixed photo frame */
-.team-photo{
-  width: 160px;
-  height: 160px;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.03);
-}
-
-/* Force the image to live inside the frame */
-.team-photo img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Don’t let long text / lists stretch weird */
-.team-content{
-  min-width: 0;
-}
-
-.team-content h3{
-  margin-top: 0;
-}
-
-/* Mobile: stack image above text */
-@media (max-width: 900px){
-  .team-inner{
-    grid-template-columns: 1fr;
-  }
-  .team-photo{
-    width: 100%;
-    height: 220px; /* looks good on mobile */
-  }
-}
-.team-card .about-highlight.soft{
-  padding: 1rem 1.1rem;
-  border-radius: 14px;
-}
-.team-card .about-highlight.soft h4{
-  margin-bottom: .5rem;
-}
-
-.isa-about-credential {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 1.25rem;
-  padding: 1rem;
-  border-left: 4px solid var(--accent);
-  background: var(--bg-muted);
-}
-
-.isa-about-credential img {
-  height: 70px;
-  width: auto;
-  flex-shrink: 0;
-}
-
-.isa-about-text {
-  font-size: 0.875em;
-  line-height: 1.6;
-}
-
-/* -------------------------
-   Services page feature bands
-   — full-width until photos land
--------------------------- */
-.feature-band {
-  padding: 3.5rem 0;
-}
-
-.feature-inner {
-  justify-content: center !important;
-}
-
-.feature-card {
-  width: min(720px, 100%);
 }
