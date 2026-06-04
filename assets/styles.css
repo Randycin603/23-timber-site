@@ -1240,3 +1240,19 @@ main {
   font-size: 0.875em;
   line-height: 1.6;
 }
+
+/* -------------------------
+   Services page feature bands
+   — full-width until photos land
+-------------------------- */
+.feature-band {
+  padding: 3.5rem 0;
+}
+
+.feature-inner {
+  justify-content: center !important;
+}
+
+.feature-card {
+  width: min(720px, 100%);
+}
