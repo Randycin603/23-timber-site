@@ -658,7 +658,7 @@ main {
 
 .section.cta {
   background: #000;
-  ...
+  padding: 4.5rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -916,11 +916,19 @@ main {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .feature-inner,
-  .feature-band.right .feature-inner {
-    justify-content: center;
-  }
+.feature-inner {
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
 
+.feature-band.right .feature-inner .feature-media {
+  order: 0;
+}
+
+.feature-media img {
+  min-height: 0;
+  height: 240px;
+}
   .feature-band {
     padding: 2.5rem 0;
   }
