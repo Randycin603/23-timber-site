@@ -1056,3 +1056,14 @@ main {
     padding: 3.5rem 0;
   }
 }
+
+.checklist a {
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+.checklist a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
