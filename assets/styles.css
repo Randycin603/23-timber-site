@@ -301,6 +301,30 @@ main {
    Feature Bands (Services)
 -------------------------- */
 
+
+.feature-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.feature-band.right .feature-inner .feature-media {
+  order: 2;
+}
+
+.feature-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  max-height: 460px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+  display: block;
+}
+
 .feature-band {
   position: relative;
   padding: 4rem 0;
@@ -315,15 +339,6 @@ main {
 .feature-band:nth-of-type(even) {
   background: radial-gradient(ellipse at 80% 50%, rgba(61,163,93,0.04) 0%, transparent 60%),
               #0d0d0d;
-}
-
-.feature-inner {
-  display: flex;
-  justify-content: center;
-}
-
-.feature-band.right .feature-inner {
-  justify-content: center;
 }
 
 .feature-card {
