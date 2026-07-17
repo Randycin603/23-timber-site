@@ -445,7 +445,7 @@ main {
    Quick-nav pill list (replaces boxed checklist card)
 -------------------------- */
 
-.quick-nav {
+.card.quick-nav {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
