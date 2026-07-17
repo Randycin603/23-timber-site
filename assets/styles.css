@@ -418,6 +418,79 @@ main {
 }
 
 /* -------------------------
+   Page intro with background photo
+-------------------------- */
+
+.section.intro-photo {
+  position: relative;
+  background-size: cover;
+  background-position: center 35%;
+  overflow: hidden;
+}
+
+.section.intro-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--bg) 0%, rgba(12, 14, 10, 0.72) 55%, var(--bg) 100%);
+  z-index: 0;
+}
+
+.section.intro-photo .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* -------------------------
+   Quick-nav pill list (replaces boxed checklist card)
+-------------------------- */
+
+.quick-nav {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.quick-nav h3 {
+  margin-bottom: 1rem;
+}
+
+.quick-nav .checklist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.quick-nav .checklist li {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+}
+
+.quick-nav .checklist li::before {
+  content: none;
+}
+
+.quick-nav .checklist a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 1.15rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  color: var(--text-main);
+  font-size: 0.88rem;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.quick-nav .checklist a:hover {
+  border-color: var(--accent-subtle);
+  color: var(--accent-subtle);
+  background: rgba(185, 138, 82, 0.08);
+  text-decoration: none;
+}
+
+/* -------------------------
    Grids
 -------------------------- */
 
