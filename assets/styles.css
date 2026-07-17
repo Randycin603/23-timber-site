@@ -2,6 +2,8 @@
    Base + Layout
 -------------------------- */
 
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,450;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap');
+
 *,
 *::before,
 *::after {
@@ -42,13 +44,43 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background-color: var(--bg);
   color: var(--text-main);
 }
 
 body {
   min-height: 100vh;
+  position: relative;
+}
+
+/* Subtle topographic contour texture — on-brand for a land/timber company,
+   reads as texture rather than decoration */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cg fill='none' stroke='%237cae70' stroke-width='1'%3E%3Cpath d='M-20 60 Q 100 10, 220 60 T 460 60'/%3E%3Cpath d='M-20 130 Q 100 80, 220 130 T 460 130'/%3E%3Cpath d='M-20 200 Q 100 150, 220 200 T 460 200'/%3E%3Cpath d='M-20 270 Q 100 220, 220 270 T 460 270'/%3E%3Cpath d='M-20 340 Q 100 290, 220 340 T 460 340'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 480px 480px;
+}
+
+h1, h2, h3,
+.feature-card h2,
+.note-title,
+.hero-copy h1 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  line-height: 1.08;
+  margin: 0 0 0.75rem;
 }
 
 /* -------------------------
@@ -81,14 +113,16 @@ main {
 }
 
 .section-header h2 {
-  font-size: 1.9rem;
-  margin: 0 0 0.5rem;
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  margin: 0 0 0.6rem;
 }
 
 .section-header p {
   margin: 0;
   color: var(--text-muted);
   max-width: 32rem;
+  font-size: 1.02rem;
+  line-height: 1.6;
 }
 
 /* -------------------------
@@ -301,6 +335,10 @@ main {
    Feature Bands (Services)
 -------------------------- */
 
+main {
+  counter-reset: feature-count;
+}
+
 .feature-inner {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
@@ -332,6 +370,7 @@ main {
   position: relative;
   padding: 4rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
+  counter-increment: feature-count;
 }
 
 .feature-band:nth-of-type(odd) {
@@ -352,9 +391,14 @@ main {
   backdrop-filter: blur(8px);
 }
 
+.feature-card {
+  position: relative;
+  overflow: hidden;
+}
+
 .feature-card h2 {
   margin-top: 0;
-  font-size: 1.6rem;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
   color: var(--accent-contrast);
 }
 
@@ -365,8 +409,9 @@ main {
 
 .feature-card h4 {
   margin: 1.25rem 0 0.5rem;
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent-soft);
 }
@@ -379,6 +424,26 @@ main {
   background: linear-gradient(90deg, var(--accent), transparent);
   border-radius: 999px;
   margin-bottom: 1.25rem;
+}
+
+.feature-card::after {
+  content: counter(feature-count, decimal-leading-zero);
+  position: absolute;
+  top: -0.4rem;
+  right: 1rem;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 5.5rem;
+  font-weight: 600;
+  color: var(--accent-contrast);
+  opacity: 0.05;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.feature-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* -------------------------
@@ -624,9 +689,11 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.65rem 1.6rem;
+  padding: 0.75rem 1.8rem;
   border-radius: 999px;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   border: 1px solid rgba(172, 165, 151, 0.4);
   background: rgba(18, 20, 15, 0.85);
   color: var(--text-main);
