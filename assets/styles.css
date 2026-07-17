@@ -9,26 +9,26 @@
 }
 
 :root {
-  /* Dark Wilderness palette */
+  /* Northern Timber palette — warmer, less crushed-black, natural forest green */
 
   /* Backgrounds */
-  --bg: #0b0b0b;
-  --bg-elevated: #141414;
-  --bg-soft: #050608;
+  --bg: #12140f;
+  --bg-elevated: #1c1f18;
+  --bg-soft: #0c0e0a;
 
   /* Text */
-  --text-main: #e5e5e5;
-  --text-muted: #a0a0a0;
+  --text-main: #f0efe8;
+  --text-muted: #aca597;
 
   /* Borders */
-  --border-soft: #262626;
+  --border-soft: #2d3026;
 
   /* Accents */
-  --accent: #3da35d;
-  --accent-soft: #659e63;
-  --accent-softest: #243624;
-  --accent-contrast: #f9faf7;
-  --accent-subtle: #c08457;
+  --accent: #4f8c52;
+  --accent-soft: #7cae70;
+  --accent-softest: #263420;
+  --accent-contrast: #f8f7f0;
+  --accent-subtle: #b98a52;
 
   /* Radius + shadows */
   --radius-lg: 1.3rem;
@@ -63,7 +63,7 @@ body {
 }
 
 main {
-  background: radial-gradient(circle at top, #141414 0, #0b0b0b 55%);
+  background: radial-gradient(circle at top, var(--bg-elevated) 0%, var(--bg) 55%, var(--bg-soft) 100%);
   padding-top: 64px;
 }
 
@@ -72,7 +72,7 @@ main {
 }
 
 .section.muted {
-  background: #0b0b0b;
+  background: radial-gradient(circle at top, #171911 0%, var(--bg-soft) 100%);
 }
 
 .section-header {
@@ -100,9 +100,9 @@ main {
   top: 0;
   width: 100%;
   z-index: 9999;
-  background: #000 !important;
+  background: rgba(12, 14, 10, 0.85) !important;
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid #222 !important;
+  border-bottom: 1px solid rgba(45, 48, 38, 0.8) !important;
 }
 
 .header-inner {
@@ -209,7 +209,7 @@ main {
 .nav-toggle span {
   width: 20px;
   height: 2px;
-  background-color: #e5e7eb;
+  background-color: var(--text-main);
   border-radius: 999px;
 }
 
@@ -331,24 +331,24 @@ main {
 .feature-band {
   position: relative;
   padding: 4rem 0;
-  border-top: 1px solid rgba(61, 163, 93, 0.18);
+  border-top: 1px solid rgba(79, 140, 82, 0.18);
 }
 
 .feature-band:nth-of-type(odd) {
-  background: radial-gradient(ellipse at 20% 50%, rgba(61,163,93,0.04) 0%, transparent 60%),
-              #0b0b0b;
+  background: radial-gradient(ellipse at 20% 50%, rgba(79,140,82,0.06) 0%, transparent 60%),
+              var(--bg);
 }
 
 .feature-band:nth-of-type(even) {
-  background: radial-gradient(ellipse at 80% 50%, rgba(61,163,93,0.04) 0%, transparent 60%),
-              #0d0d0d;
+  background: radial-gradient(ellipse at 80% 50%, rgba(79,140,82,0.06) 0%, transparent 60%),
+              var(--bg-elevated);
 }
 
 .feature-card {
   width: min(720px, 100%);
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(18, 20, 15, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.07);
-  border-top: 2px solid rgba(61, 163, 93, 0.35);
+  border-top: 2px solid rgba(79, 140, 82, 0.35);
   border-radius: 18px;
   padding: 2rem 2.25rem;
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
@@ -416,16 +416,16 @@ main {
 -------------------------- */
 
 .card {
-  background: #000 !important;
+  background: var(--bg-elevated) !important;
   border-radius: var(--radius-lg);
   padding: 1.6rem 1.8rem;
-  border: 1px solid #222 !important;
+  border: 1px solid var(--border-soft) !important;
   box-shadow: var(--shadow-subtle);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-  border-color: rgba(61, 163, 93, 0.3) !important;
+  border-color: rgba(79, 140, 82, 0.35) !important;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
 }
 
@@ -470,7 +470,7 @@ main {
 -------------------------- */
 
 .about-highlight {
-  background: radial-gradient(circle at top, #18140f, #0b0907);
+  background: radial-gradient(circle at top, #201a13 0%, var(--bg-soft) 100%);
   border-radius: var(--radius-lg);
   padding: 1.6rem 1.7rem;
   border: 1px solid var(--border-soft);
@@ -557,7 +557,7 @@ main {
   margin-top: 1.25rem;
   padding: 1rem;
   border-left: 4px solid var(--accent);
-  background: rgba(61, 163, 93, 0.05);
+  background: rgba(79, 140, 82, 0.07);
   border-radius: 0 8px 8px 0;
 }
 
@@ -630,8 +630,8 @@ main {
   padding: 0.65rem 1.6rem;
   border-radius: 999px;
   font-size: 0.9rem;
-  border: 1px solid rgba(148, 163, 184, 0.5);
-  background: rgba(10, 10, 10, 0.85);
+  border: 1px solid rgba(172, 165, 151, 0.4);
+  background: rgba(18, 20, 15, 0.85);
   color: var(--text-main);
   text-decoration: none;
   cursor: pointer;
@@ -642,12 +642,13 @@ main {
 
 .btn.primary {
   background: linear-gradient(135deg, var(--accent), var(--accent-soft));
-  border-color: rgba(22, 163, 74, 0.9);
+  border-color: rgba(79, 140, 82, 0.9);
   color: var(--accent-contrast);
 }
 
 .btn.ghost {
-  background: rgba(15, 23, 42, 0.75);
+  background: rgba(28, 31, 24, 0.75);
+  border-color: rgba(240, 239, 232, 0.35);
 }
 
 .btn.full {
@@ -658,11 +659,11 @@ main {
 .btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.55);
-  border-color: rgba(148, 163, 184, 0.8);
+  border-color: rgba(172, 165, 151, 0.7);
 }
 
 .btn.primary:hover {
-  background: linear-gradient(135deg, #16a34a, #15803d);
+  background: linear-gradient(135deg, var(--accent-soft), var(--accent));
 }
 
 /* -------------------------
@@ -670,9 +671,9 @@ main {
 -------------------------- */
 
 .section.cta {
-  background: #000;
+  background: radial-gradient(circle at top left, var(--accent-softest) 0%, var(--bg-soft) 100%);
   padding: 4.5rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(79, 140, 82, 0.2);
 }
 
 .cta-inner {
@@ -691,8 +692,8 @@ main {
 .cta-inner p {
   margin: 0;
   max-width: 38ch;
-  color: #d1fae5;
-  opacity: 0.9;
+  color: var(--accent-contrast);
+  opacity: 0.85;
   line-height: 1.55;
 }
 
@@ -705,8 +706,8 @@ main {
 -------------------------- */
 
 .site-footer {
-  background: #000 !important;
-  border-top: 1px solid #222 !important;
+  background: var(--bg-soft) !important;
+  border-top: 1px solid var(--border-soft) !important;
   padding: 1.2rem 0 1.5rem;
 }
 
@@ -738,7 +739,7 @@ main {
 }
 
 .note-card {
-  background: #050608;
+  background: var(--bg-soft);
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border-soft);
@@ -804,7 +805,7 @@ main {
 .note-hero {
   padding: 2.5rem 0 2.25rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  background: radial-gradient(circle at top, #111 0%, #050505 60%);
+  background: radial-gradient(circle at top, var(--bg-elevated) 0%, var(--bg-soft) 60%);
 }
 
 .note-kicker {
